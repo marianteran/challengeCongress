@@ -1,0 +1,97 @@
+.colorFondo{
+    background: #58bdd6;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #EAECC6, #7ed1e6);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #EAECC6, #7ed1e6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.colorAcordion{
+    background: #2BC0E4;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #EAECC6, #2BC0E4);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #EAECC6, #2BC0E4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+
+.color-nav{
+    background-image: linear-gradient(180deg, #2af598 0%, #009efd 100%);
+    
+}
+
+.text{
+    font-weight: bold;
+    font-size: 19px;
+}
+
+
+p{
+    text-align: justify;
+    line-height: 30px;
+    text-indent: 5%;
+}
+
+nav{
+
+    box-shadow: 0px 13px 5px -1px rgba(91,139,235,1);
+}
+
+.mail{
+    font-size: 22px;
+}
+
+.fas{
+    font-size: 3rem;
+    
+} 
+
+.titleInsight{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    
+} 
+
+h5{
+    font-size: 2rem;
+    font-style: italic;
+   
+}  
+
+
+
+.contenido{
+    padding: 20px;
+    margin-left: 2%;
+}
+
+
+
+.imagen{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+
+.accordion-header, .accordion-item{
+    border-style: none !important;
+}
+
+
+/* section footer */
+
+footer {
+    color: #616161;
+    padding: 20px;
+}
+  
+  
+
+
+
+
+

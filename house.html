@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<!-- boostrap -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<!-- fontawesome library -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+		integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+	<!-- css -->
+	<link rel="stylesheet" href="assets/css/main.css" />
+
+
+	
+	<title>House</title>
+</head>
+
+<body id="house" class="colorFondo">
+
+	<header>
+		<div class="navbar navbar-light bg-light">
+			<div class="container-fluid ">
+				<div class="d-flex titleInsight">
+					<a class="navbar-brand my-2" href="#">
+						<img src="assets/img/logoHeader.png " class="mx-4 " alt="" width="200" height="100"
+							class="d-inline-block align-text-top">
+
+					</a>
+
+					<h5 class="text-primary title ">Data Insight Group</h5>
+				</div>
+
+				<div class="d-flex ">
+					<a class="text-primary mx-5"><i class="fas fa-mail-bulk"></i></a>
+
+					<a href="mailto:info@datainsightgroup.net"
+						class="text-primary me-sm-5 mail ">info@datainsightgroup.net</a>
+				</div>
+			</div>
+
+		</div>
+
+		<nav class="navbar navbar-expand-lg navbar-dark bg-primary color-nav">
+			<div class="container-fluid">
+				<a class="navbar-brand mx-5 text" href="home.html">Home</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
+					aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navbarColor01">
+					<ul class="navbar-nav me-auto">
+
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle text" data-bs-toggle="dropdown" href="#" role="button"
+								aria-haspopup="true" aria-expanded="false">Congress 113</a>
+							<div class="dropdown-menu">
+								<a class="dropdown" href="senate.html">Senate</a>
+								<a class="dropdown-item" href="#">House</a>
+
+							</div>
+						</li>
+
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle text" data-bs-toggle="dropdown" href="#" role="button"
+								aria-haspopup="true" aria-expanded="false">Attendance</a>
+							<div class="dropdown-menu">
+								<a class="dropdown" href="senateAttendance.html">Senate</a>
+								<a class="dropdown-item" href="houseAttendance.html">House</a>
+
+							</div>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle text" data-bs-toggle="dropdown" href="#" role="button"
+								aria-haspopup="true" aria-expanded="false">Party Loyalty</a>
+							<div class="dropdown-menu">
+								<a class="dropdown" href="senateParty.html">Senate</a>
+								<a class="dropdown-item" href="houseParty.html">House</a>
+
+							</div>
+						</li>
+					</ul>
+
+				</div>
+			</div>
+		</nav>
+
+
+	</header>
+	<!--Table container-->
+	<div class="container">
+
+		<section class="contenido">
+			<div>
+				<h2 class="text-center my-5">Congressmen</h2>
+				<p>The major power of the House is to pass federal legislation that affects the entire country, although
+					its
+					bills must also be passed by the Senate and further agreed to by the U.S. President before becoming
+					law
+					(unless both the House and Senate re-pass the legislation with a two-thirds majority in each
+					chamber).
+					The House has some exclusive powers: the power to initiate revenue bills, to impeach officials
+					(impeached officials are subsequently tried in the Senate), and to elect the U.S. President in case
+					there is no majority in the Electoral College.</p>
+				<p>Each U.S. state is represented in the House in proportion to its population as measured in the
+					census,
+					but every state is entitled to at least one representative. </p>
+				<div id="app">
+					
+
+					<table class="container-fluid table table-striped">
+						<thead>
+							<th class="name_data_table">Name</th>
+							<th>
+								Party
+								<label for="democrat">D</label>
+								<input v-model="partys" type="checkbox" id="democrat" name="party" value="D">&nbsp;&nbsp;
+								<label for="republican">R</label>
+								<input v-model="partys" type="checkbox" id="republican" name="party" value="R">&nbsp;&nbsp;
+								<label for="independent">ID</label>
+								<input v-model="partys" type="checkbox" id="independent" name="party" value="ID">
+							</th>
+							<th>
+								<label for="states">States</label>
+								<select v-model="state" name="states" id="states">
+									<option value="">All States</option>
+									<option :value="state" v-for="state in stateFilter">{{state}}</option>
+								</select>
+							</th>
+							<th>Years/Seniority</th>
+							<th>% Votes w/party</th>
+						</thead>
+						<tbody >
+							<tr v-for="item in selectPartyMembers">
+								<td>{{item.first_name}} {{item.middle_name}} {{item.last_name}}</td>
+								<td>{{item.party}}</td>
+								<td>{{item.state}}</td>
+								<td>{{item.seniority}}</td>
+								<td>{{item.votes_with_party_pct}}%</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+		</section>
+
+
+
+	</div>
+
+	<footer class="dark bg-dark mt-4">
+
+		<div class=" text-center pt-2">
+			<span>&#169; 2021 Data Insight Group &#124; All Rights Reserved</span>
+
+		</div>
+		<div class=" text-center pt-2">
+			<span>Developer Marianela Terán</span>
+
+		</div>
+
+	</footer>
+
+
+	<!-- javascript boostrap-->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+		crossorigin="anonymous"></script>
+
+
+	<!-- javascript main-->
+	<script src="https://unpkg.com/vue@next"></script>
+	<script src="./js/main.js"></script>
+
+
+
+
+</body>
+
+</html>
